@@ -20,10 +20,12 @@ import com.interface21.beans.PropertyValues;
  * <p> A BeanDefinition describes a bean instance,
  * which has property values and further information supplied
  * by concrete classes or subinterfaces.
+ * BeanDefinition描述了一个bean实例，该实例具有属性值和由具体类或子接口提供的更多信息。
  * <p>
  * <p>Once configuration is complete, a BeanFactory will be able
  * to return direct references to objects defined by
  * BeanDefinitions.
+ * 一旦配置完成，BeanFactory将能够直接返回由BeanDefinitions定义的对象的引用。
  *
  * @author Rod Johnson
  * @version $Id$

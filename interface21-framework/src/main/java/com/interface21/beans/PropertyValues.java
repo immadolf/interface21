@@ -8,6 +8,7 @@ package com.interface21.beans;
 /**
  * Object containing 0 or more PropertyValues comprising
  * one update.
+ * 包含0个或多个PropertyValue且包含一个更新的对象。
  *
  * @author Rod Johnson
  * @version $Id$
@@ -43,6 +44,7 @@ public interface PropertyValues {
     /**
      * Return the changes since the previous PropertyValues.
      * Subclasses should also override equals.
+     * 返回自上一个PropertyValues以来的更改。 子类还应该覆盖equals。
      *
      * @param old old property values
      * @return PropertyValues updated or new properties.

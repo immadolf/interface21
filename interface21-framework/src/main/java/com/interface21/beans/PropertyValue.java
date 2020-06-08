@@ -9,11 +9,14 @@ package com.interface21.beans;
  * Using an object here, rather than just storing all properties in a
  * map keyed by property name, allows for more flexibility, and the
  * ability to handle indexed properties etc. if necessary.
+ * 用于保存单个属性的信息和值的类。在这里使用对象，而不只是将所有属性存储在以属性名称为键的map中，
+ * 可以提供更大的灵活性，并在必要时能够处理索引属性等。
  * <p>
  * <p>Note that the value doesn't need to be the final required type:
  * a BeanWrapper implementation should handle any necessary conversion,
  * as this object doesn't know anything about the objects it will be
  * applied to.
+ * 请注意，value不必是最终所需的类型：BeanWrapper实现应处理任何必要的转换，因为此对象对将应用于的对象一无所知。
  *
  * @author Rod Johnson
  * @version $Id$

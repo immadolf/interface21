@@ -18,26 +18,34 @@ import java.util.Map;
 
 /**
  * The central interface of the Spring JavaBeans infrastructure.
+ * Spring JavaBeans基础结构的中央接口。
  * Interface to be implemented by classes that can manipulate Java beans.
+ * 由可以操纵Java bean的类实现的接口。
  * <p>
  * <p>Implementing classes have the ability to get and set
  * property values (individually or in bulk), get property descriptors
  * and query the readability and writability of properties.
+ * 实现类具有获取和设置（单独或批量）属性值，获取属性描述符并查询属性的可读性和可写性的能力。
  * <p>
  * <p>This interface supports <b>nested properties</b> enabling the setting of
  * properties on subproperties to an unlimited depth.
+ * 该界面支持嵌套属性，可将子属性上的属性设置为无限深度。
  * <p>
  * <p>If a property update causes an exception, a PropertyVetoException will be thrown.
+ * 如果属性更新导致异常，则将引发PropertyVetoException。
  * Bulk updates continue after exceptions are encountered, throwing an exception
  * wrapping <b>all</b> exceptions encountered during the update.
+ * 遇到异常后，批量更新将继续，并引发一个异常包装了在更新过程中遇到的所有异常。
  * <p>
  * <p>BeanWrapper implementations can be used repeatedly, with their "target" or
  * wrapped object changed.
+ * 可以重复使用BeanWrapper实现，当其“目标”或包装的对象变更后。
  * <p>
  * <p>This interface supports the ability to add standard JavaBeans API
  * PropertyChangeListeners and VetoableChangeListeners, without the need for
  * supporting code in the target class. VetoableChangeListeners can veto
  * individual property changes.
+ * 此接口支持添加标准JavaBeans API -- PropertyChangeListeners和VetoableChangeListeners的能力，而无需在目标类中支持代码。 VetoableChangeListeners可以否决单个属性更改
  *
  * @author Rod Johnson
  * @version $Id$

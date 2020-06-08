@@ -293,10 +293,15 @@ public abstract class AbstractBeanFactory implements HierarchicalBeanFactory {
     /**
      * All the other methods in this class invoke this method
      * although beans may be cached after being instantiated by this method.
+     * 此类中的所有其他方法都调用此方法,尽管bean可能在被该方法实例化之后被缓存。
      * All bean instantiation within this class is performed by this method.
+     * 此类中的所有bean实例化都是通过此方法执行的。
      * Return a BeanWrapper object for a new instance of this bean.
+     * 返回此Bean的新实例的BeanWrapper对象。
      * First look up BeanDefinition for the given bean name.
+     * 首先，查找给定bean名称的BeanDefinition。
      * Uses recursion to support instance "inheritance".
+     * 使用递归来支持实例“继承”。
      *
      * @param name              name of the bean. Must be unique in the BeanFactory
      * @param newlyCreatedBeans cache with newly created beans (name, instance)
@@ -519,8 +524,9 @@ public abstract class AbstractBeanFactory implements HierarchicalBeanFactory {
 
     /**
      * Make a RootBeanDefinition, even by traversing parent if the parameter is a child definition.
+     * 即使参数是子定义，也可以遍历父对象来制作RootBeanDefinition。
      *
-     * @return a merged RootBeanDefinition with overriden properties
+     * @return a merged RootBeanDefinition with overriden properties 具有重写属性的合并RootBeanDefinition
      */
     protected final RootBeanDefinition getMergedBeanDefinition(String name) throws NoSuchBeanDefinitionException {
         try {

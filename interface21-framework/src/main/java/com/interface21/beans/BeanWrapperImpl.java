@@ -40,6 +40,7 @@ import com.interface21.beans.propertyeditors.PropertyValuesEditor;
 /**
  * Default implementation of the BeanWrapper interface that should be sufficient
  * for all normal uses. Caches introspection results for efficiency.
+ * BeanWrapper接口的默认实现对于所有正常使用应足够。缓存自省结果以提高效率。
  * <p>
  * <p>Note: this class never tries to load a class by name, as this can pose
  * class loading problems in J2EE applications with multiple deployment modules.
@@ -49,6 +50,9 @@ import com.interface21.beans.propertyeditors.PropertyValuesEditor;
  * which couldn't see the required class.) We don't attempt to solve such problems
  * by obtaining the classloader at runtime, because this violates the EJB
  * programming restrictions.
+ * 注意：此类从不尝试按名称加载类，因为这可能在具有多个部署模块的J2EE应用程序中引起类加载问题。
+ * 例如，如果在WAR中使用了该类但由EJB类加载器加载了该类，并且要加载的类在WAR中，则在某些应用程序服务器中无法按名称加载该类。
+ * （此类将使用EJB类加载器，看不到所需的类。）我们不会尝试通过在运行时获取类加载器来解决此类问题，因为这违反了EJB编程限制。
  * <p>
  * <p>Note: Regards property editors in com.interface21.beans.propertyeditors.
  * Also explictly register the default ones to care for JREs that do not use
@@ -56,6 +60,10 @@ import com.interface21.beans.propertyeditors.PropertyValuesEditor;
  * Applications can either use a standard PropertyEditorManager to register a
  * custom editor before using a BeanWrapperImpl instance, or call the instance's
  * registerCustomEditor method to register an editor for the particular instance.
+ * 注意：关于com.interface21.beans.propertyeditors中的属性编辑器。
+ * 还明确注册默认值，以照顾不使用线程上下文类加载器作为编辑器搜索路径的JRE。
+ * 应用程序可以在使用BeanWrapperImpl实例之前使用标准的PropertyEditorManager注册自定义编辑器，
+ * 或者调用实例的 registerCustomEditor方法为特定实例注册编辑器。
  *
  * @author Rod Johnson
  * @author Juergen Hoeller
@@ -172,8 +180,9 @@ public class BeanWrapperImpl implements BeanWrapper {
 
     /**
      * Creates new BeanWrapperImpl, wrapping a new instance of the specified class
+     * 创建一个BeanWrapperImpl，包装指定类型的实例.
      *
-     * @param clazz class to instantiate and wrap
+     * @param clazz class to instantiate and wrap 待实例化和包装的类
      * @throws BeansException if the class cannot be wrapped by a BeanWrapper
      */
     public BeanWrapperImpl(Class clazz) throws BeansException {
@@ -185,8 +194,9 @@ public class BeanWrapperImpl implements BeanWrapper {
     /**
      * Implementation method to switch the target object, replacing the cached introspection results
      * only if the class of the new object is different to that of the replaced object
+     * 交换目标对象的实现方法，仅当新对象的类与替换对象的类不同时，才替换缓存的自省结果的实现方法
      *
-     * @param object new target
+     * @param object new target 新的目标对象
      * @throws BeansException if the object cannot be changed
      */
     private void setObject(Object object) throws BeansException {
@@ -760,12 +770,13 @@ public class BeanWrapperImpl implements BeanWrapper {
 
     /**
      * Disabling event propagation improves performance.
+     * 禁用事件传播可提高性能。
      *
-     * @param flag whether event propagation should be enabled
+     * @param flag whether event propagation should be enabled 是否应启用事件传播
      */
     public void setEventPropagationEnabled(boolean flag) {
         this.eventPropagationEnabled = flag;
-        // Lazily initialize support for events if not already initialized
+        // Lazily initialize support for events if not already initialized  延迟初始化对事件的支持（如果尚未初始化）
         if (eventPropagationEnabled && (vetoableChangeSupport == null || propertyChangeSupport == null)) {
             vetoableChangeSupport = new VetoableChangeSupport(object);
             propertyChangeSupport = new PropertyChangeSupport(object);

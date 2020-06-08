@@ -14,7 +14,7 @@ import com.interface21.beans.PropertyValues;
 
 /**
  * Root bean definitions have a class and properties.
- *
+ * Root bean definitions有被描述对象的类型和属性.
  * @author Rod Johnson
  * @version $Id$
  */

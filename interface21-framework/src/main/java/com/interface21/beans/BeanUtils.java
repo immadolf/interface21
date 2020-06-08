@@ -11,6 +11,7 @@ import java.util.List;
 /**
  * Static convenience methods for JavaBeans.
  * Provides e.g. methods for sorting lists of beans by any property.
+ * JavaBeans的静态便捷方法。提供例如通过任何属性对bean列表进行排序的方法。
  *
  * @author Rod Johnson
  * @author Juergen Hoeller
@@ -21,6 +22,7 @@ public abstract class BeanUtils {
      * Convenience method to instantiate a class using its
      * no arg constructor. As this method doesn't try to load
      * classes by name, it should avoid class-loading issues.
+     * 使用无参构造函数实例化类的便捷方法。由于此方法不会尝试按名称加载类，因此应避免出现类加载问题
      *
      * @param clazz class to instantiate.
      */
